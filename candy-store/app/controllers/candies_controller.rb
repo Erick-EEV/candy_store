@@ -6,16 +6,25 @@ class CandiesController < ApplicationController
 
     def show
         @candy = Candy.find(params[:id])
-        # @candy_name = Candy.find(params[:name])
-        # @candy_calories = Candy.find(params[:calories])
-        # @wrapper = Candy.find(params[:wrapper_color])
-        # @nuts = Candy.find(params[:has_nuts])
-        # (@candy)
         render :show
     end
 
     def new
         
+    end
+
+    def create
+        name = Candy.find(params[:name])
+        calories = Candy.find(params[:calories])
+        wrapper = Candy.find(params[:wrapper_color])
+        nuts = Candy.find(params[:has_nuts])
+        id = Candy.find(params[:id])
+
+        Candy.create(name: name, 
+            calories: calories, 
+            wrapper_color: wrapper,
+            has_nuts: nuts)
+            redirect_to candy_path
     end
 
 

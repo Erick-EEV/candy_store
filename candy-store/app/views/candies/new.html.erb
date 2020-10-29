@@ -1,2 +1,17 @@
 <h1>Create New Candy!</h1>
 
+<%=form_tag candy_path(:id) do %>
+    <%= label_tag(:name, 'Name')%>
+    <%= text_field_tag(:name)%><br>
+
+    <%= label_tag(:calories, 'Calories')%>
+    <%= text_field_tag(:calories)%><br>
+
+    <%= label_tag(:wrapper_color, 'Wrapper Color')%>
+    <%=select_tag(:wrapper_color, "<option>Blue</option><option>Red</option><option>Purple</option>".html_safe)%><br>
+
+    <%= label_tag(:has_nuts, 'Has Nuts?')%>
+    <%= select_tag(:has_nuts, "<option>true</option><option>false</option>".html_safe)%><br>
+
+    <%= submit_tag("Submit")%>
+<% end%>
