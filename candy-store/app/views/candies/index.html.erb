@@ -1,0 +1,6 @@
+<h1>Candies Page</h1>
+<ol>
+<% @candies.each do |candy| %>
+    <li><%= link_to candy.name, candy_path(candy.id) %></li>
+    <% end %>
+</ol>
